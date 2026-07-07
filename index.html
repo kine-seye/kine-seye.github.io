@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiné Seye — Data Scientist &amp; AI Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2A44;
+    --sand:#F7F3EC;
+    --sand-deep:#EFE8DC;
+    --ochre:#C1701F;
+    --teal:#2C6659;
+    --muted:#8A8378;
+    --line: rgba(27,42,68,0.14);
+    --card: #FFFFFF;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  a{color:inherit;}
+
+  /* ---------- NAV ---------- */
+  header.top{
+    padding:28px 0 0;
+  }
+  .top-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:var(--muted);
+  }
+  .top-row .name-mark{
+    color:var(--ink);
+    font-weight:500;
+  }
+  .top-row nav a{
+    text-decoration:none;
+    margin-left:20px;
+    color:var(--muted);
+    transition:color .2s;
+  }
+  .top-row nav a:hover{color:var(--ochre);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 72px;
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap:32px;
+    align-items:start;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    color:var(--teal);
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--ochre);
+    display:inline-block;
+  }
+  h1.display{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-weight:700;
+    font-size:clamp(38px, 6.4vw, 64px);
+    line-height:1.03;
+    letter-spacing:-0.01em;
+    margin:0 0 22px;
+    max-width:11ch;
+  }
+  h1.display em{
+    font-style:normal;
+    color:var(--ochre);
+  }
+  .hero p.lede{
+    font-size:18px;
+    max-width:46ch;
+    color:#3c4a63;
+    margin:0 0 30px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    padding:12px 22px;
+    border-radius:3px;
+    text-decoration:none;
+    display:inline-block;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--sand);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1.5px solid var(--line);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{border-color:var(--ink);}
+
+  /* Compass mark */
+  .compass{
+    width:132px;
+    height:132px;
+    flex-shrink:0;
+    margin-top:6px;
+  }
+  @media (max-width:640px){
+    .hero{grid-template-columns:1fr;}
+    .compass{width:88px;height:88px;}
+  }
+  .needle{
+    transform-origin:66px 66px;
+    animation:settle 2.4s cubic-bezier(.2,.9,.25,1) forwards;
+  }
+  @keyframes settle{
+    0%{transform:rotate(-46deg);}
+    55%{transform:rotate(14deg);}
+    75%{transform:rotate(-6deg);}
+    100%{transform:rotate(0deg);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .needle{animation:none;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:52px 0;border-top:1px solid var(--line);}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:30px;
+  }
+  .section-head .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--muted);
+    letter-spacing:0.05em;
+  }
+  .section-head h2{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-size:26px;
+    font-weight:600;
+    margin:0;
+  }
+  .intro-text{
+    max-width:60ch;
+    color:#3c4a63;
+    font-size:16.5px;
+  }
+
+  /* ---------- PROJECT CARDS ---------- */
+  .project{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:28px 30px;
+    margin-bottom:20px;
+  }
+  .project-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:12px;
+  }
+  .project h3{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-size:22px;
+    margin:0;
+  }
+  .bearing{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    color:var(--ochre);
+    border:1px solid rgba(193,112,31,0.35);
+    padding:4px 10px;
+    border-radius:20px;
+    white-space:nowrap;
+  }
+  .project p.desc{
+    margin:0 0 16px;
+    color:#3c4a63;
+    font-size:15.5px;
+    max-width:62ch;
+  }
+  .project .meta-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .stack span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    background:var(--sand-deep);
+    padding:4px 9px;
+    border-radius:3px;
+    color:#4b5670;
+  }
+  .status{
+    font-size:13px;
+    font-weight:600;
+    color:var(--teal);
+  }
+  .project-link{
+    font-size:13.5px;
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1.5px solid var(--ochre);
+    padding-bottom:1px;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(210px,1fr));
+    gap:24px;
+  }
+  .skill-group h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.05em;
+    color:var(--muted);
+    margin:0 0 10px;
+    text-transform:uppercase;
+  }
+  .skill-group ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+    font-size:14.5px;
+  }
+  .skill-group li{
+    padding:5px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .skill-group li:last-child{border-bottom:none;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:56px 0 60px;
+    border-top:1px solid var(--line);
+  }
+  .footer-head{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-size:30px;
+    font-weight:600;
+    max-width:14ch;
+    margin:0 0 26px;
+  }
+  .footer-links{
+    display:flex;
+    gap:26px;
+    flex-wrap:wrap;
+    font-size:15px;
+  }
+  .footer-links a{
+    text-decoration:none;
+    border-bottom:1.5px solid var(--ochre);
+    padding-bottom:2px;
+    font-weight:500;
+  }
+  .footer-bottom{
+    margin-top:40px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--muted);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="top-row">
+      <span class="name-mark">KINÉ SEYE</span>
+      <nav>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">14.6928° N &nbsp;·&nbsp; 17.4467° O &nbsp;—&nbsp; DAKAR, SÉNÉGAL</p>
+      <h1 class="display">Je construis des <em>boussoles</em>.</h1>
+      <p class="lede">Data Scientist &amp; AI Developer. Je conçois des agents IA qui aident des personnes à s'orienter dans des décisions qui comptent&nbsp;: immigrer, aller mieux, garder ses talents en entreprise.</p>
+      <div class="hero-cta">
+        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn btn-ghost">Me contacter</a>
+      </div>
+    </div>
+    <svg class="compass" viewBox="0 0 132 132" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="66" cy="66" r="62" fill="none" stroke="#1B2A44" stroke-opacity="0.18" stroke-width="1.5"/>
+      <circle cx="66" cy="66" r="46" fill="none" stroke="#1B2A44" stroke-opacity="0.12" stroke-width="1"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="9" fill="#8A8378">
+        <text x="62" y="20" text-anchor="middle">N</text>
+        <text x="62" y="118" text-anchor="middle">S</text>
+        <text x="10" y="70" text-anchor="middle">O</text>
+        <text x="118" y="70" text-anchor="middle">E</text>
+      </g>
+      <g class="needle">
+        <polygon points="66,22 73,66 66,60 59,66" fill="#C1701F"/>
+        <polygon points="66,110 73,66 66,72 59,66" fill="#1B2A44"/>
+      </g>
+      <circle cx="66" cy="66" r="4" fill="#1B2A44"/>
+    </svg>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="tag">// ORIENTATION</span>
+      <h2>Ce que je fais</h2>
+    </div>
+    <p class="intro-text">Je développe des agents IA de bout en bout — du modèle à l'API jusqu'au canal WhatsApp — pour des problèmes concrets en Afrique de l'Ouest. Mon approche&nbsp;: comprendre le contexte local en profondeur (mobile money, langues, contraintes d'accès), puis construire des outils qui fonctionnent vraiment en production, pas seulement en démo.</p>
+  </section>
+
+  <section class="section" id="projets">
+    <div class="section-head">
+      <span class="tag">// TROIS CAPS</span>
+      <h2>Projets</h2>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Boussole</h3>
+        <span class="bearing">CAP · IMMIGRATION &amp; BOURSES</span>
+      </div>
+      <p class="desc">Agent IA qui évalue les chances d'immigration et de bourse d'un candidat sénégalais vers le Canada ou la France, à partir de son profil. Score par critère, plan de coaching personnalisé, checklist documentaire — le tout accessible depuis WhatsApp.</p>
+      <div class="meta-row">
+        <div class="stack">
+          <span>FastAPI</span><span>PostgreSQL</span><span>Llama 3.3 70B</span><span>Streamlit</span><span>Render</span>
+        </div>
+        <a class="project-link" href="https://github.com/kine-seye/boussole-" target="_blank" rel="noopener">Voir le code →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Sefa Bien-être</h3>
+        <span class="bearing">CAP · SANTÉ MENTALE</span>
+      </div>
+      <p class="desc">Agent IA de soutien en santé mentale, accessible via WhatsApp, pensé pour l'Afrique de l'Ouest. Une écoute disponible en français, sans barrière d'accès technique ou financière.</p>
+      <div class="meta-row">
+        <div class="stack">
+          <span>FastAPI</span><span>Groq · Llama 3.3 70B</span><span>WhatsApp Cloud API</span><span>Render</span>
+        </div>
+        <a class="project-link" href="https://github.com/kine-seye/sefa-agent" target="_blank" rel="noopener">Voir le code →</a>
+      </div>
+      <div style="margin-top:14px;"><span class="status">● En production — +221 78 896 28 56</span></div>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Generative HR Analytics</h3>
+        <span class="bearing">CAP · RESSOURCES HUMAINES</span>
+      </div>
+      <p class="desc">Mémoire de fin d'études&nbsp;: prédiction du turnover employé avec explicabilité complète. Un modèle XGBoost couplé à SHAP pour expliquer chaque prédiction, et des recommandations RH générées par IA.</p>
+      <div class="meta-row">
+        <div class="stack">
+          <span>XGBoost</span><span>SHAP</span><span>Mistral AI</span><span>Streamlit</span>
+        </div>
+        <a class="project-link" href="https://github.com/kine-seye/projetRHLIG" target="_blank" rel="noopener">Voir le code →</a>
+      </div>
+      <div style="margin-top:14px;"><span class="status">● AUC 0.8031 — seuil optimisé 0.31</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="competences">
+    <div class="section-head">
+      <span class="tag">// INSTRUMENTS</span>
+      <h2>Compétences</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Machine Learning</h4>
+        <ul>
+          <li>XGBoost</li>
+          <li>SHAP (explicabilité)</li>
+          <li>Scikit-learn</li>
+          <li>Pandas / Matplotlib</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>IA générative</h4>
+        <ul>
+          <li>Llama 3.3 70B (Groq)</li>
+          <li>Mistral AI</li>
+          <li>Prompt engineering</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Backend &amp; données</h4>
+        <ul>
+          <li>FastAPI</li>
+          <li>PostgreSQL / SQLite</li>
+          <li>Alembic</li>
+          <li>Streamlit</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Cybersécurité</h4>
+        <ul>
+          <li>Wazuh (SIEM / FIM)</li>
+          <li>Nmap, Hydra, Fail2ban</li>
+          <li>Chiffrement RSA</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p class="footer-head">Discutons de votre prochain cap.</p>
+    <div class="footer-links">
+      <a href="mailto:kineseyeetudiante448@gmail.com">Email</a>
+      <a href="https://wa.me/221784482934" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/kine-seye-b513b13ba" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/kine-seye" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="footer-bottom">
+      <span>KINÉ SEYE — DATA SCIENTIST &amp; AI DEVELOPER</span>
+      <span>DAKAR, SÉNÉGAL</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
