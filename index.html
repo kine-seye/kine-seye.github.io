@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kiné Seye — Data Scientist &amp; AI Developer</title>
+<title>Kiné Seye — Data Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -252,6 +252,13 @@
     border-bottom:1.5px solid var(--ochre);
     padding-bottom:1px;
   }
+  .project-shot{
+    width:100%;
+    border-radius:4px;
+    border:1px solid var(--line);
+    margin-bottom:18px;
+    display:block;
+  }
 
   /* ---------- SKILLS ---------- */
   .skills-grid{
@@ -333,8 +340,8 @@
   <section class="hero">
     <div>
       <p class="eyebrow">14.6928° N &nbsp;·&nbsp; 17.4467° O &nbsp;—&nbsp; DAKAR, SÉNÉGAL</p>
-      <h1 class="display">Je construis des <em>boussoles</em>.</h1>
-      <p class="lede">Data Scientist &amp; AI Developer. Je conçois des agents IA qui aident des personnes à s'orienter dans des décisions qui comptent&nbsp;: immigrer, aller mieux, garder ses talents en entreprise.</p>
+      <h1 class="display">Je transforme des données <em>en décisions</em>.</h1>
+      <p class="lede">Data Analyst. Je conçois des outils d'analyse déployés — de la base de données à l'API en production — pour des problèmes concrets en Afrique de l'Ouest : comparaison de coûts financiers, prédiction RH.</p>
       <div class="hero-cta">
         <a href="#projets" class="btn btn-primary">Voir mes projets</a>
         <a href="#contact" class="btn btn-ghost">Me contacter</a>
@@ -362,42 +369,37 @@
       <span class="tag">// ORIENTATION</span>
       <h2>Ce que je fais</h2>
     </div>
-    <p class="intro-text">Je développe des agents IA de bout en bout — du modèle à l'API jusqu'au canal WhatsApp — pour des problèmes concrets en Afrique de l'Ouest. Mon approche&nbsp;: comprendre le contexte local en profondeur (mobile money, langues, contraintes d'accès), puis construire des outils qui fonctionnent vraiment en production, pas seulement en démo.</p>
+    <p class="intro-text">Je construis des outils d'analyse déployés de bout en bout — de la conception de la base de données jusqu'à une API en production. Mon approche&nbsp;: comprendre le contexte local en profondeur (mobile money, données RH), puis livrer des outils qui fonctionnent vraiment en production, pas seulement une maquette ou un dashboard statique.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <span class="tag">// CARNET DE ROUTE</span>
+      <h2>À propos</h2>
+    </div>
+    <p class="intro-text">Diplômée en Informatique de Gestion à l'UCAO (Dakar), je me suis orientée vers l'analyse de données parce que j'aime comprendre un problème réel avant de le modéliser — pas l'inverse. Je construis des outils pensés pour le contexte ouest-africain (mobile money, données RH locales), avec une exigence&nbsp;: chaque donnée doit être vérifiable, chaque projet doit être déployé, pas seulement démontré.</p>
   </section>
 
   <section class="section" id="projets">
     <div class="section-head">
-      <span class="tag">// TROIS CAPS</span>
+      <span class="tag">// DEUX CAPS</span>
       <h2>Projets</h2>
     </div>
 
     <div class="project">
       <div class="project-top">
-        <h3>Boussole</h3>
-        <span class="bearing">CAP · IMMIGRATION &amp; BOURSES</span>
+        <h3>Comparateur Mobile Money Sénégal</h3>
+        <span class="bearing">CAP · FINTECH</span>
       </div>
-      <p class="desc">Agent IA qui évalue les chances d'immigration et de bourse d'un candidat sénégalais vers le Canada ou la France, à partir de son profil. Score par critère, plan de coaching personnalisé, checklist documentaire — le tout accessible depuis WhatsApp.</p>
+      <img src="images/mobile-money-resultat.png" alt="Résultat du comparateur mobile money" class="project-shot">
+      <p class="desc">Comparateur de frais en temps réel entre Wave, Orange Money et Yas (retrait, transfert, dépôt), taxe d'État incluse dans le calcul. Données collectées et vérifiées en conditions réelles — chaque tarif est sourcé et daté, pas simulé.</p>
       <div class="meta-row">
         <div class="stack">
-          <span>FastAPI</span><span>PostgreSQL</span><span>Llama 3.3 70B</span><span>Streamlit</span><span>Render</span>
+          <span>PostgreSQL</span><span>FastAPI</span><span>React</span><span>Render</span>
         </div>
-        <a class="project-link" href="https://github.com/kine-seye/boussole-" target="_blank" rel="noopener">Voir le code →</a>
+        <a class="project-link" href="https://github.com/kine-seye/mobile-money-comparator" target="_blank" rel="noopener">Voir le code →</a>
       </div>
-    </div>
-
-    <div class="project">
-      <div class="project-top">
-        <h3>Sefa Bien-être</h3>
-        <span class="bearing">CAP · SANTÉ MENTALE</span>
-      </div>
-      <p class="desc">Agent IA de soutien en santé mentale, accessible via WhatsApp, pensé pour l'Afrique de l'Ouest. Une écoute disponible en français, sans barrière d'accès technique ou financière.</p>
-      <div class="meta-row">
-        <div class="stack">
-          <span>FastAPI</span><span>Groq · Llama 3.3 70B</span><span>WhatsApp Cloud API</span><span>Render</span>
-        </div>
-        <a class="project-link" href="https://github.com/kine-seye/sefa-agent" target="_blank" rel="noopener">Voir le code →</a>
-      </div>
-      <div style="margin-top:14px;"><span class="status">● En production — +221 78 896 28 56</span></div>
+      <div style="margin-top:14px;"><span class="status">● En production — 3 opérateurs comparés</span></div>
     </div>
 
     <div class="project">
@@ -405,6 +407,7 @@
         <h3>Generative HR Analytics</h3>
         <span class="bearing">CAP · RESSOURCES HUMAINES</span>
       </div>
+      <img src="images/hr-scoring.png" alt="Scoring de risque de départ — HR Analytics" class="project-shot">
       <p class="desc">Mémoire de fin d'études&nbsp;: prédiction du turnover employé avec explicabilité complète. Un modèle XGBoost couplé à SHAP pour expliquer chaque prédiction, et des recommandations RH générées par IA.</p>
       <div class="meta-row">
         <div class="stack">
@@ -423,37 +426,36 @@
     </div>
     <div class="skills-grid">
       <div class="skill-group">
+        <h4>Analyse & Données</h4>
+        <ul>
+          <li>SQL (PostgreSQL, SQLite)</li>
+          <li>Power BI</li>
+          <li>Pandas</li>
+          <li>Excel</li>
+        </ul>
+      </div>
+      <div class="skill-group">
         <h4>Machine Learning</h4>
         <ul>
           <li>XGBoost</li>
           <li>SHAP (explicabilité)</li>
           <li>Scikit-learn</li>
-          <li>Pandas / Matplotlib</li>
         </ul>
       </div>
       <div class="skill-group">
-        <h4>IA générative</h4>
-        <ul>
-          <li>Llama 3.3 70B (Groq)</li>
-          <li>Mistral AI</li>
-          <li>Prompt engineering</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Backend &amp; données</h4>
+        <h4>Backend & déploiement</h4>
         <ul>
           <li>FastAPI</li>
           <li>PostgreSQL / SQLite</li>
-          <li>Alembic</li>
+          <li>Render</li>
           <li>Streamlit</li>
         </ul>
       </div>
       <div class="skill-group">
-        <h4>Cybersécurité</h4>
+        <h4>IA appliquée</h4>
         <ul>
-          <li>Wazuh (SIEM / FIM)</li>
-          <li>Nmap, Hydra, Fail2ban</li>
-          <li>Chiffrement RSA</li>
+          <li>Mistral AI</li>
+          <li>Prompt engineering</li>
         </ul>
       </div>
     </div>
@@ -468,7 +470,7 @@
       <a href="https://github.com/kine-seye" target="_blank" rel="noopener">GitHub</a>
     </div>
     <div class="footer-bottom">
-      <span>KINÉ SEYE — DATA SCIENTIST &amp; AI DEVELOPER</span>
+      <span>KINÉ SEYE — DATA ANALYST</span>
       <span>DAKAR, SÉNÉGAL</span>
     </div>
   </footer>
